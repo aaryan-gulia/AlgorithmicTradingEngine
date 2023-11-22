@@ -11,11 +11,23 @@
 
 class AlphaVantageProvider : public MarketDataProvider{
 private:
-    static std::unordered_map<std::string,std::unordered_map<std::string, std::string>> functionMap;
+
 public:
-    const Json::Value fetchMarketData(const std::string& function,
-                                                            const std::string& instrumentSymbol,
-                                                            const std::string& apiKey);
+    const Json::Value fetchMarketData(const std::string& instrumentSymbol,
+                                      std::string& interval,
+                                      std::string& dataType,
+                                      const std::string& apiKey) override;
+
+    const Json::Value currencyMarketData(const std::string& instrumentSymbol,
+                                        std::string& interval,
+                                        const std::string& apiKey,
+                                        const std::string& functionBase);
+    const Json::Value equityMarketData(const std::string& instrumentSymbol,
+                                       const std::string& interval,
+                                       const std::string& apiKey);
+    const Json::Value commodityMarketData(const std::string& instrumentSymbol,
+                                          const std::string& interval,
+                                          const std::string& apiKey);
 };
 
 

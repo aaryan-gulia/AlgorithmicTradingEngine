@@ -7,12 +7,19 @@
 #include "MarketDataAccessor.h"
 
 class MarketDataAccess: public MarketDataAccessor {
+private:
+    std::string providerName, providerApiKey;
 public:
-    Json::Value fetchHistoricalData(const std::string& providerName,
-                                            const std::string& instrumentSymbol,
-                                            const std::string& interval,
-                                            const std::string& dataType,
-                                            const std::string& providerApiKey);
+    Json::Value fetchHistoricalData(const std::string& instrumentSymbol,
+                                    std::string& interval,
+                                    std::string& dataType) override;
+
+    MarketDataAccess(std::string& marketDataProvider, std::string& apiKey):
+        providerName(marketDataProvider),
+        providerApiKey(apiKey){}
+
+    void setProvider(const std::string& marketDataProvider);
+    void setApiKey(const std::string& apiKey);
 };
 
 

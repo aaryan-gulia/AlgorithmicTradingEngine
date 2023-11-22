@@ -10,10 +10,8 @@
 
 class MarketDataAccessor{
 public:
-    virtual Json::Value fetchHistoricalData(const std::string& providerName,
-                                            const std::string& instrumentSymbol,
-                                            const std::string& interval,
-                                            const std::string& dataType,
-                                            const std::string& providerApiKey) = 0;
+    virtual     Json::Value fetchHistoricalData(const std::string& instrumentSymbol,
+                                                std::string& interval,
+                                                std::string& dataType) = 0;
 };
 #endif //ALGORITHMICTRADINGENGINE_MARKETDATAACCESSOR_H

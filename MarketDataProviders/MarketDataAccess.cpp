@@ -9,13 +9,18 @@
 #include "AlphaVantageProvider.h"
 #include "json/json.h"
 
-Json::Value MarketDataAccess::fetchHistoricalData(const std::string& providerName,
-                                const std::string& instrumentSymbol,
-                                const std::string& interval,
-                                const std::string& dataType,
-                                const std::string& providerApiKey){
+Json::Value MarketDataAccess::fetchHistoricalData(const std::string& instrumentSymbol,
+                                                  std::string& interval,
+                                                  std::string& dataType){
     std::shared_ptr<MarketDataProvider> marketDataProvider =
             MarketDataProviderFactory::createProvider(providerName);
-    Json::Value marketData = marketDataProvider->fetchMarketData("TIME_SERIES_DAILY", instrumentSymbol, providerApiKey);
+    Json::Value marketData = marketDataProvider->fetchMarketData(instrumentSymbol, interval, dataType, providerApiKey);
     return marketData;
+}
+
+void MarketDataAccess::setProvider(const std::string& marketDataProvider){
+    providerName = marketDataProvider;
+}
+void MarketDataAccess::setApiKey(const std::string& apiKey){
+    providerApiKey = apiKey;
 }
