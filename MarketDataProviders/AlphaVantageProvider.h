@@ -21,13 +21,15 @@ public:
     const Json::Value currencyMarketData(const std::string& instrumentSymbol,
                                         std::string& interval,
                                         const std::string& apiKey,
-                                        const std::string& functionBase);
+                                        std::string& functionBase);
     const Json::Value equityMarketData(const std::string& instrumentSymbol,
-                                       const std::string& interval,
-                                       const std::string& apiKey);
+                                       std::string& interval,
+                                       const std::string& apiKey,
+                                       std::string& functionBase);
     const Json::Value commodityMarketData(const std::string& instrumentSymbol,
-                                          const std::string& interval,
-                                          const std::string& apiKey);
+                                          std::string& interval,
+                                          const std::string& apiKey,
+                                          std::string& functionBase);
 };
 
 
