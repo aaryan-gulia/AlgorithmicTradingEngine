@@ -12,18 +12,19 @@ int main() {
     MarketDataAccess marketDataAccess(provider,apiKey);
 
     // Retrieve historical data for a specific stock
-    std::string interval = "weekly";
-    std::string dataType = "commodity";
-    Json::Value historicalData = marketDataAccess.fetchHistoricalData("NATURAL_GAS",interval,dataType);
+    std::string interval = "daily";
+    std::string dataType = "equityadjusted";
+    std::string symbol = "ibm";
+    Json::Value historicalData = marketDataAccess.fetchHistoricalData(symbol,interval,dataType);
 
     const Json::Value& timeSeriesData = historicalData;
 
-    for(const auto & it : timeSeriesData){
-        const std::string& date = it["date"].asString();
-        const std::string& value = it["value"].asString();
-
-        std::cout << date << " - Value: " << value<<std::endl;
-    }
+//    for(const auto & it : timeSeriesData){
+//        const std::string& date = it["date"].asString();
+//        const std::string& value = it["value"].asString();
+//
+//        std::cout << date << " - Value: " << value<<std::endl;
+//    }
 
     for (Json::Value::const_iterator it = timeSeriesData.begin(); it != timeSeriesData.end(); ++it) {
         const std::string& date = it.key().asString();
@@ -33,7 +34,7 @@ int main() {
         double high = stod(values["2. high"].asString());
         double low = stod(values["3. low"].asString());
         double close = stod(values["4. close"].asString());
-        double volume = stod(values["5. volume"].asString());
+        double volume = stod(values["6. volume"].asString());
 
         std::cout << date << " - Open: " << open << ", High: " << high << ", Low: " << low << ", Close: " << close << ", Volume: "<<volume << std::endl;
     }

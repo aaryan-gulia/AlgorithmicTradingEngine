@@ -13,20 +13,20 @@ class AlphaVantageProvider : public MarketDataProvider{
 private:
 
 public:
-    const Json::Value fetchMarketData(const std::string& instrumentSymbol,
+    const Json::Value fetchMarketData(std::string& instrumentSymbol,
                                       std::string& interval,
                                       std::string& dataType,
                                       const std::string& apiKey) override;
 
-    const Json::Value currencyMarketData(const std::string& instrumentSymbol,
+    const Json::Value currencyMarketData(std::string& instrumentSymbol,
                                         std::string& interval,
                                         const std::string& apiKey,
                                         std::string& functionBase);
-    const Json::Value equityMarketData(const std::string& instrumentSymbol,
+    const Json::Value equityMarketData(std::string& instrumentSymbol,
                                        std::string& interval,
                                        const std::string& apiKey,
                                        std::string& functionBase);
-    const Json::Value commodityMarketData(const std::string& instrumentSymbol,
+    const Json::Value commodityMarketData(std::string& instrumentSymbol,
                                           std::string& interval,
                                           const std::string& apiKey,
                                           std::string& functionBase);

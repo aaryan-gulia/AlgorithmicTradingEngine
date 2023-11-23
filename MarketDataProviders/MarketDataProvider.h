@@ -13,7 +13,7 @@ class MarketDataProvider {
 public:
     virtual string connect(const string& url);
     virtual Json::Value parseJson(const string& response);
-    virtual const Json::Value fetchMarketData(const std::string& instrumentSymbol,
+    virtual const Json::Value fetchMarketData(std::string& instrumentSymbol,
                                               std::string& interval,
                                               std::string& dataType,
                                               const std::string& apiKey) = 0;

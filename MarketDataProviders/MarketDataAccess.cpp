@@ -9,7 +9,7 @@
 #include "AlphaVantageProvider.h"
 #include "json/json.h"
 
-Json::Value MarketDataAccess::fetchHistoricalData(const std::string& instrumentSymbol,
+Json::Value MarketDataAccess::fetchHistoricalData(std::string& instrumentSymbol,
                                                   std::string& interval,
                                                   std::string& dataType){
     std::shared_ptr<MarketDataProvider> marketDataProvider =

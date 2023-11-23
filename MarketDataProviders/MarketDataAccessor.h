@@ -10,7 +10,7 @@
 
 class MarketDataAccessor{
 public:
-    virtual     Json::Value fetchHistoricalData(const std::string& instrumentSymbol,
+    virtual     Json::Value fetchHistoricalData(std::string& instrumentSymbol,
                                                 std::string& interval,
                                                 std::string& dataType) = 0;
 };

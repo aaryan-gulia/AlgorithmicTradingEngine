@@ -10,7 +10,7 @@ class MarketDataAccess: public MarketDataAccessor {
 private:
     std::string providerName, providerApiKey;
 public:
-    Json::Value fetchHistoricalData(const std::string& instrumentSymbol,
+    Json::Value fetchHistoricalData(std::string& instrumentSymbol,
                                     std::string& interval,
                                     std::string& dataType) override;
 
