@@ -1,0 +1,6 @@
+# ninja log v5
+1	1733	1700763556549910409	CMakeFiles/AlgorithmicTradingEngine.dir/MarketDataProviders/MarketDataAccess.cpp.o	c167f39ecf1e5127
+1	1747	1700763556563318312	CMakeFiles/AlgorithmicTradingEngine.dir/MarketDataProviders/MarketDataProviderFactory.cpp.o	9ac591b78e24d62c
+1	1788	1700763556605260507	CMakeFiles/AlgorithmicTradingEngine.dir/MarketDataProviders/MarketDataProvider.cpp.o	f8a414650317e0eb
+0	1834	1700763556653522459	CMakeFiles/AlgorithmicTradingEngine.dir/MarketDataProviders/AlphaVantageProvider.cpp.o	644a7442b9ff7a14
+1834	1936	1700763556760518867	libAlgorithmicTradingEngine.dylib	e975d0fce61e5f1b

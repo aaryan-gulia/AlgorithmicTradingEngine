@@ -1,0 +1,3 @@
+/Users/aaryangulia/CLionProjects/AlgorithmicTradingEngine/cmake-build-debug/CMakeFiles/AlgorithmicTradingEngine.dir
+/Users/aaryangulia/CLionProjects/AlgorithmicTradingEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/aaryangulia/CLionProjects/AlgorithmicTradingEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
