@@ -3,6 +3,7 @@
 #include <string>
 #include <json/json.h>
 #include "MarketDataProviders/MarketDataAccess.h"
+#include "DataManager/DataFrame.h"
 
 
 int main() {
@@ -13,19 +14,14 @@ int main() {
 
     // Retrieve historical data for a specific stock
     std::string interval = "daily";
-    std::string dataType = "equityadjusted";
+    std::string dataType = "equity";
     std::string symbol = "ibm";
     Json::Value historicalData = marketDataAccess.fetchHistoricalData(symbol,interval,dataType);
 
-    const Json::Value& timeSeriesData = historicalData;
+    DataFrame<std::string> dataFrame(historicalData);
+    std::cout<<dataFrame;
 
-//    for(const auto & it : timeSeriesData){
-//        const std::string& date = it["date"].asString();
-//        const std::string& value = it["value"].asString();
-//
-//        std::cout << date << " - Value: " << value<<std::endl;
-//    }
-
+/*
     for (Json::Value::const_iterator it = timeSeriesData.begin(); it != timeSeriesData.end(); ++it) {
         const std::string& date = it.key().asString();
         const Json::Value& values = *it;
@@ -38,6 +34,7 @@ int main() {
 
         std::cout << date << " - Open: " << open << ", High: " << high << ", Low: " << low << ", Close: " << close << ", Volume: "<<volume << std::endl;
     }
+*/
 
     return 0;
 }

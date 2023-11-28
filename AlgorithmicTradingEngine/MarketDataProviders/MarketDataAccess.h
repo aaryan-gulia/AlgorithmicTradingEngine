@@ -18,8 +18,8 @@ public:
         providerName(marketDataProvider),
         providerApiKey(apiKey){}
 
-    void setProvider(const std::string& marketDataProvider);
-    void setApiKey(const std::string& apiKey);
+    void setProvider(const std::string& marketDataProvider){providerName = marketDataProvider;}
+    void setApiKey(const std::string& apiKey){providerApiKey = apiKey;};
 };
 
 

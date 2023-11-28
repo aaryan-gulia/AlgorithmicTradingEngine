@@ -19,9 +19,9 @@ public:
                                       const std::string& apiKey) override;
 
     const Json::Value currencyMarketData(std::string& instrumentSymbol,
-                                        std::string& interval,
-                                        const std::string& apiKey,
-                                        std::string& functionBase);
+                                         std::string& interval,
+                                         const std::string& apiKey,
+                                         std::string& functionBase);
     const Json::Value equityMarketData(std::string& instrumentSymbol,
                                        std::string& interval,
                                        const std::string& apiKey,
